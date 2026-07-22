@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe · Homepage</title>
+    <!-- separate CSS file: style.css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome for icons (optional but nice) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+
 <body>
-    Hello world
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Brew & Bloom</h1>
+            <p>where every cup tells a story</p>
+            <a href="#categories" class="btn-hero">explore our coffee</a>
+        </div>
+    </section>
+
+    <!-- ========== COFFEE CATEGORIES ========== -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">our <span>coffee</span></h2>
+            <div class="category-grid">
+                <!-- card 1 -->
+                <div class="category-card">
+                    <div class="card-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>Espresso</h3>
+                    <p>Rich, bold, and full of character — the heart of every coffee.</p>
+                </div>
+                <!-- card 2 -->
+                <div class="category-card">
+                    <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Latte</h3>
+                    <p>Smooth steamed milk meets intense espresso, topped with art.</p>
+                </div>
+                <!-- card 3 -->
+                <div class="category-card">
+                    <div class="card-icon"><i class="fas fa-cup-togo"></i></div>
+                    <h3>Cold Brew</h3>
+                    <p>Slow-steeped for 12 hours, served chilled for a refreshing kick.</p>
+                </div>
+                <!-- card 4 -->
+                <div class="category-card">
+                    <div class="card-icon"><i class="fas fa-mug-saucer"></i></div>
+                    <h3>Cappuccino</h3>
+                    <p>Equal parts espresso, steamed milk, and velvety foam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LOCATION SECTION ========== -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title">find <span>us</span></h2>
+            <div class="location-wrapper">
+                <div class="location-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-pin"></i>
+                        <p>123 Bloom Street,<br />Coffee District, CD 101</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Mon – Fri: 7:00 – 21:00<br />Sat – Sun: 8:00 – 20:00</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+1 (555) 202-6262</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>hello@brewandbloom.cafe</p>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <!-- embedded map (static) -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019905218468!2d-122.419418684682!3d37.77492977975969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c4db5d7d5%3A0x7e4b4efb6d8c6b6f!2sCafe%20Central!5e0!3m2!1sen!2sus!4v1644262345678!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER (extra) ========== -->
+    <footer>
+        <p>© 2026 Brew & Bloom — crafted with <i class="fas fa-heart" style="color: #b5654a;"></i></p>
+    </footer>
+
+    <!-- separate JavaScript file: script.js -->
+    <script src="script.js"></script>
 </body>
+
 </html>
