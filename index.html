@@ -4,99 +4,164 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafe · Homepage</title>
-    <!-- separate CSS file: style.css -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome for icons (optional but nice) -->
+    <title>Brew & Bloom · Artisan Cafe</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts (Poppins + Playfair Display) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader-cup"><i class="fas fa-mug-hot"></i></div>
+        <p>brewing warmth...</p>
+    </div>
+
+    <!-- NAVIGATION (sticky + glass) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i> Brew & Bloom
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#categories">Coffee</a></li>
+                <li><a href="#location">Visit</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#location" class="btn-outline">Find Us</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
         <div class="hero-content">
-            <h1>Brew & Bloom</h1>
+            <span class="hero-badge">✦ artisan roastery</span>
+            <h1>Brew & <span>Bloom</span></h1>
             <p>where every cup tells a story</p>
-            <a href="#categories" class="btn-hero">explore our coffee</a>
+            <div class="hero-actions">
+                <a href="#categories" class="btn-primary">explore our coffee <i class="fas fa-arrow-right"></i></a>
+                <a href="#location" class="btn-ghost"><i class="fas fa-map-pin"></i> visit us</a>
+            </div>
+            <div class="hero-stats">
+                <div><span>15+</span> blends</div>
+                <div><span>10yr</span> legacy</div>
+                <div><span>4.9★</span> rating</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>scroll</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ========== COFFEE CATEGORIES ========== -->
+    <!-- ===== CATEGORIES ===== -->
     <section class="categories" id="categories">
         <div class="container">
-            <h2 class="section-title">our <span>coffee</span></h2>
-            <div class="category-grid">
-                <!-- card 1 -->
-                <div class="category-card">
-                    <div class="card-icon"><i class="fas fa-mug-hot"></i></div>
-                    <h3>Espresso</h3>
-                    <p>Rich, bold, and full of character — the heart of every coffee.</p>
-                </div>
-                <!-- card 2 -->
-                <div class="category-card">
-                    <div class="card-icon"><i class="fas fa-coffee"></i></div>
-                    <h3>Latte</h3>
-                    <p>Smooth steamed milk meets intense espresso, topped with art.</p>
-                </div>
-                <!-- card 3 -->
-                <div class="category-card">
-                    <div class="card-icon"><i class="fas fa-cup-togo"></i></div>
-                    <h3>Cold Brew</h3>
-                    <p>Slow-steeped for 12 hours, served chilled for a refreshing kick.</p>
-                </div>
-                <!-- card 4 -->
-                <div class="category-card">
-                    <div class="card-icon"><i class="fas fa-mug-saucer"></i></div>
-                    <h3>Cappuccino</h3>
-                    <p>Equal parts espresso, steamed milk, and velvety foam.</p>
-                </div>
+            <div class="section-header">
+                <span class="tag">our menu</span>
+                <h2 class="section-title">coffee <span>collection</span></h2>
+                <p class="section-sub">crafted with precision, served with soul</p>
+            </div>
+            <div class="category-grid" id="categoryGrid">
+                <!-- cards will be populated by JS with hover 3D effect -->
             </div>
         </div>
     </section>
 
-    <!-- ========== LOCATION SECTION ========== -->
+    <!-- ===== QUOTE / PARALLAX ===== -->
+    <section class="parallax-quote">
+        <div class="parallax-bg"></div>
+        <div class="quote-content">
+            <i class="fas fa-quote-left"></i>
+            <blockquote>“Coffee is a language in itself.”</blockquote>
+            <cite>— Jackie Chan</cite>
+        </div>
+    </section>
+
+    <!-- ===== LOCATION ===== -->
     <section class="location" id="location">
         <div class="container">
-            <h2 class="section-title">find <span>us</span></h2>
+            <div class="section-header">
+                <span class="tag">visit us</span>
+                <h2 class="section-title">find <span>our cafe</span></h2>
+            </div>
             <div class="location-wrapper">
                 <div class="location-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-pin"></i>
-                        <p>123 Bloom Street,<br />Coffee District, CD 101</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Bloom Street, Coffee District, CD 101</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Mon – Fri: 7:00 – 21:00<br />Sat – Sun: 8:00 – 20:00</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Mon – Fri: 7:00 – 21:00<br />Sat – Sun: 8:00 – 20:00</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <p>+1 (555) 202-6262</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 202-6262</p>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>hello@brewandbloom.cafe</p>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@brewandbloom.cafe</p>
+                        </div>
+                    </div>
+                    <div class="social-row">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="location-map">
-                    <!-- embedded map (static) -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019905218468!2d-122.419418684682!3d37.77492977975969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c4db5d7d5%3A0x7e4b4efb6d8c6b6f!2sCafe%20Central!5e0!3m2!1sen!2sus!4v1644262345678!5m2!1sen!2sus"
-                        width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        width="100%" height="100%" style="border:0; border-radius: 20px;" allowfullscreen=""
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FOOTER (extra) ========== -->
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>© 2026 Brew & Bloom — crafted with <i class="fas fa-heart" style="color: #b5654a;"></i></p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <i class="fas fa-seedling"></i> Brew & Bloom
+                <p>© 2026 — crafted with <i class="fas fa-heart"></i></p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Coffee</a></li>
+                <li><a href="#location">Visit</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <!-- separate JavaScript file: script.js -->
+    <!-- separate JS -->
     <script src="script.js"></script>
 </body>
 
