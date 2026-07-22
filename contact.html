@@ -1,0 +1,248 @@
+<!-- contact.html – Separate Contact Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Brew & Bloom</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Separate Contact CSS -->
+  <link rel="stylesheet" href="contact-style.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="loader-cup"><i class="fas fa-mug-hot"></i></div>
+    <p>brewing warmth...</p>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-seedling"></i> Brew & Bloom
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#categories">Coffee</a></li>
+        <li><a href="index.html#location">Visit</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#reserve" class="btn-outline">Reserve</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTACT HERO ===== -->
+  <section class="contact-hero" id="contact">
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-content">
+      <span class="hero-badge">✦ get in touch</span>
+      <h1>Let's <span>connect</span></h1>
+      <p>We'd love to hear from you — drop us a message or visit us in person</p>
+      <div class="hero-stats-mini">
+        <div><i class="fas fa-clock"></i> Open daily</div>
+        <div><i class="fas fa-coffee"></i> Fresh brews</div>
+        <div><i class="fas fa-heart"></i> 200+ happy guests</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTACT SECTION ===== -->
+  <section class="contact-main" id="contactMain">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- LEFT: FORM -->
+        <div class="contact-form-wrapper reveal">
+          <div class="form-header">
+            <span class="tag">send a message</span>
+            <h2 class="section-title">say <span>hello</span></h2>
+            <p class="section-sub">Fill in the form and we'll get back to you within 24 hours.</p>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Full Name <span class="required">*</span></label>
+              <input type="text" id="name" placeholder="e.g. Jane Doe" required />
+              <span class="error-msg" id="nameError">Please enter your name</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="you@example.com" required />
+                <span class="error-msg" id="emailError">Please enter a valid email</span>
+              </div>
+              <div class="form-group">
+                <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+              <select id="subject">
+                <option value="general">General Inquiry</option>
+                <option value="reservation">Reservation</option>
+                <option value="feedback">Feedback</option>
+                <option value="careers">Careers</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment"></i> Message <span class="required">*</span></label>
+              <textarea id="message" rows="5" placeholder="Tell us everything..." required></textarea>
+              <span class="error-msg" id="messageError">Please write your message</span>
+            </div>
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" id="agree" required />
+                I agree to the <a href="#">privacy policy</a>
+              </label>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <span>send message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+
+        <!-- RIGHT: INFO + MAP -->
+        <div class="contact-info-wrapper reveal" style="transition-delay: 0.2s;">
+          <!-- Info Cards -->
+          <div class="info-card-container">
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <h4>Visit Us</h4>
+                <p>123 Bloom Street,<br />Coffee District, CD 101</p>
+                <a href="#" class="map-link"><i class="fas fa-route"></i> Get Directions</a>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p><strong>Mon – Fri:</strong> 7:00 – 21:00<br /><strong>Sat – Sun:</strong> 8:00 – 20:00</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Call Us</h4>
+                <p><a href="tel:+15552026262">+1 (555) 202-6262</a></p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">Available during hours</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email Us</h4>
+                <p><a href="mailto:hello@brewandbloom.cafe">hello@brewandbloom.cafe</a></p>
+                <p style="font-size: 0.8rem; opacity: 0.7;">We reply within 24h</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="contact-social">
+            <span>Follow us</span>
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="contact-map">
+            <div class="map-header">
+              <i class="fas fa-map"></i> Find us on the map
+            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019905218468!2d-122.419418684682!3d37.77492977975969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c4db5d7d5%3A0x7e4b4efb6d8c6b6f!2sCafe%20Central!5e0!3m2!1sen!2sus!4v1644262345678!5m2!1sen!2sus" 
+              width="100%" height="250" style="border:0; border-radius: 16px;" 
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVATION SECTION ===== -->
+  <section class="reservation-section" id="reserve">
+    <div class="container">
+      <div class="reservation-banner">
+        <div class="reservation-text">
+          <span class="tag" style="background: rgba(181, 101, 74, 0.2);">book a table</span>
+          <h2>Reserve your <span>spot</span></h2>
+          <p>Planning a visit? Secure your table in advance and enjoy a seamless experience.</p>
+        </div>
+        <div class="reservation-form-mini">
+          <form id="reserveForm">
+            <input type="date" id="reserveDate" required />
+            <input type="time" id="reserveTime" required />
+            <input type="number" id="reserveGuests" placeholder="Guests" min="1" max="20" required />
+            <button type="submit" class="btn-primary">Check Availability</button>
+          </form>
+          <div id="reserveFeedback" class="reserve-feedback"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">help center</span>
+        <h2 class="section-title">frequently <span>asked</span></h2>
+      </div>
+      <div class="faq-grid" id="faqGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i class="fas fa-seedling"></i> Brew & Bloom
+        <p>© 2026 — crafted with <i class="fas fa-heart"></i></p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#categories">Coffee</a>
+        <a href="index.html#location">Visit</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-back">
+        <a href="#" id="backToTopFooter"><i class="fas fa-arrow-up"></i> Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP FLOATING -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Separate Contact JS -->
+  <script src="contact-script.js"></script>
+</body>
+</html>
