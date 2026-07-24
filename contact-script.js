@@ -1,4 +1,4 @@
-// contact-script.js – Separate JavaScript for Contact Page
+// contact-script.js – Full contact page functionality
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -14,27 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navbar) {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
         }
-        // back to top visibility
         const backBtn = document.getElementById('backToTop');
         if (backBtn) {
             backBtn.classList.toggle('visible', window.scrollY > 400);
         }
     });
-
-    // ----- HAMBURGER -----
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            const isOpen = navLinks.style.display === 'flex';
-            navLinks.style.display = isOpen ? 'none' : 'flex';
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.style.display = 'none';
-                });
-            });
-        });
-    }
 
     // ----- DARK MODE -----
     const darkToggle = document.getElementById('darkModeToggle');
@@ -79,31 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Get values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
             const agree = document.getElementById('agree').checked;
 
-            // Reset errors
             document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('show'));
 
             let isValid = true;
 
-            // Validate name
             if (!name || name.length < 2) {
                 document.getElementById('nameError').classList.add('show');
                 isValid = false;
             }
 
-            // Validate email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!email || !emailRegex.test(email)) {
                 document.getElementById('emailError').classList.add('show');
                 isValid = false;
             }
 
-            // Validate message
             if (!message || message.length < 10) {
                 document.getElementById('messageError').classList.add('show');
                 isValid = false;
@@ -117,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!isValid) return;
 
-            // Simulate sending
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span>sending...</span><i class="fas fa-spinner fa-spin"></i>';
 
@@ -129,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.reset();
                 document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('show'));
 
-                // Auto-hide feedback after 6s
                 setTimeout(() => {
                     feedback.className = 'form-feedback';
                     feedback.innerHTML = '';
@@ -137,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
 
-        // Real-time validation on blur
+        // Real-time validation
         document.getElementById('name').addEventListener('blur', function () {
             if (this.value.trim().length < 2) {
                 document.getElementById('nameError').classList.add('show');
@@ -169,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const reserveFeedback = document.getElementById('reserveFeedback');
 
     if (reserveForm) {
-        // Set default date to tomorrow
         const dateInput = document.getElementById('reserveDate');
         if (dateInput) {
             const tomorrow = new Date();
@@ -194,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
             reserveFeedback.style.color = 'var(--primary-light)';
             reserveForm.reset();
 
-            // Reset date to tomorrow
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             dateInput.value = tomorrow.toISOString().split('T')[0];
@@ -240,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
             div.addEventListener('click', () => {
                 div.classList.toggle('active');
-                // Close others
                 document.querySelectorAll('.faq-item').forEach(other => {
                     if (other !== div) other.classList.remove('active');
                 });
@@ -249,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ----- SCROLL REVEAL (Intersection Observer) -----
+    // ----- SCROLL REVEAL -----
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -260,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ----- SMOOTH SCROLL for anchor links -----
+    // ----- SMOOTH SCROLL -----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -272,13 +246,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // ----- MAP INTERACTION (subtle) -----
-    const mapIframe = document.querySelector('.contact-map iframe');
-    if (mapIframe) {
-        mapIframe.addEventListener('load', () => {
-            // small delay to show map loaded
-        });
-    }
 
 });
